@@ -5,12 +5,10 @@ const ownerSchema=mongoose.Schema({
     email:String,
     password:String,
     
-    products:{
-        type:Array,
-        default:[]
-    },
-    picture:String,
-    gstin:String
+    products:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"product"
+    },],
 });
 
 module.exports=mongoose.model("owner",ownerSchema)

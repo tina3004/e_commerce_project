@@ -1,0 +1,39 @@
+<%- include('./partials/header') %>
+<div class="p-5">
+    <a class="text-blue-500 underline" href="/shop">All Products</a>
+</div>
+
+
+
+<div class="w-[75%] flex flex-col gap-5 h-screen p-10">
+    <div class="flex flex-wrap items-start gap-20">
+        <% products.forEach(function(product){ %>
+            <div class="w-60">
+                <div class="w-full h-52 flex items-center justify-center bg-[<%= product.bgcolor %>]">
+                    <img class="h-[12rem]" src="data:image/jpeg;base64,<%= product.image.toString('base64') %>"
+                        alt="">
+                </div>
+                <div
+                    class="flex justify-between bg-[<%= product.panelcolor %>] items-center px-4 py-4 text-[<%= product.textcolor %>]">
+                    <div>
+                        <h2>
+                            <%= product.name %>
+                        </h2>
+                        <h4>Price:₹ <%= product.price %>
+                        </h4>
+                        <h4>Discount:₹ <%= product.discount %>
+                        </h4>
+                    </div>
+                    <a class="w-6 h-6 flex items-center justify-center rounded-full bg-white text-black" href="/addtocart/<%= product._id%>">
+                        <i class="ri-add-line"></i>
+                    </a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+
+
+
+<%- include('./partials/footer') %>

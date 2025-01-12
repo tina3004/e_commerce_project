@@ -18,3 +18,10 @@ discount
 bg color
 panelcolor
 text color
+
+/ - signup/login
+/shop -shop
+/users/cart - cart
+/admin
+/owner/product-all products
+/owner/admin-admin panel to create product
